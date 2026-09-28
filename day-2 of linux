@@ -1,0 +1,54 @@
+ 1  ssh-keygen
+    2  cd /root/.ssh/
+    3  ls
+    4  cat id_ed25519.pub
+    5  ls
+    6  pwd
+    7  ls
+    8  cd /tmp/
+    9  ls
+   10  mkdir sushant
+   11  ls
+   12  cd sushant/
+   13  ls
+   14  touch mohitfile
+   15  ls
+   16  cat mohitfile 
+   17  vi indra
+   18  cat indra 
+   19  more indra 
+   20  vi indra
+   21  more indra 
+   22  cat indra 
+   23  head -10 indra 
+   24  tail -10 indra 
+   25  history
+   26  ls
+   27  cp indra gopal
+   28  ls
+   29  mv indra shashi
+   30  ls
+   31  hostname
+   32  hostname -i
+   33  hostname -e
+   34  curl ifconfig.me
+   35  history
+   36  uname
+   37  uname -a
+   38  ls
+   39  rm mohitfile 
+   40  ls
+   41  history
+   42  man curl
+   43  whoami
+   44  ps
+   45  ps -aef
+   46  ps -aef | grep systemd
+   47  ps -aef | grep java
+   48  history
+   49  top
+   50  free
+   51  free -m
+   52  free -g
+   53  free -h
+   54  history
