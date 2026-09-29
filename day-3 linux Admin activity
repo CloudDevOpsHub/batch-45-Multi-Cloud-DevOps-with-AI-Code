@@ -1,0 +1,52 @@
+ 1  ssh-keygen
+    2  uname -a
+    3  top
+    4  htop
+    5  uptime
+    6  last
+    7  df
+    8  df -h
+    9  pwd
+   10  du
+   11  ping www.google.com
+   12  who
+   13  w
+   14  whoami
+   15  ls
+   16  cd /var/log
+   17  ls
+   18  locate *.log
+   19  apt-get update 
+   20  apt install plocate
+   21  locate *.log
+   22  ls
+   23  locate *.log
+   24  find *.log
+   25  locate '*.log'
+   26  mkdir myfiles ; touch myfiles/{a.txt,b.txt,c.txt}
+   27  ls
+   28  ls myfiles
+   29  tar -cvf allfiles.tar myfiles
+   30  ls
+   31  tar -xvf allfiles.tar
+   32  adduser kishore 
+   33  su kishore
+   34  passwd kishore
+   35  usrdel kishore
+   36  userdel kishore
+   37  su kishore
+   38  addgroup devops45
+   39  getent group
+   40  adduser om
+   41  getent group
+   42  usermod -a -G devops45 om
+   43  getent group
+   44  chage
+   45  cd /etc/passwd
+   46  cd /etc/
+   47  ls
+   48  cat passwd
+   49  cat shadow
+   50  cat group
+   51  vi sudoers
+   52  history
