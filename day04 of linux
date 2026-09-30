@@ -1,0 +1,46 @@
+ 1  cd /
+    2  ls
+    3  cat /etc/os-release
+    4  cd /tmp/
+    5  ls
+    6  cd day-4
+    7  mkdir day-4
+    8  cd day-4/
+    9  ls
+   10  vi jogi
+   11  ls
+   12  vi jogi 
+   13  chage
+   14  chage -i
+   15  history
+   16  chage -l om
+   17  adduser om
+   18  chage -l om
+   19  chage om
+   20  apt-get update
+   21  apt install nginx
+   22  cd /var/www/html/
+   23  ls
+   24  vi index.nginx-debian.html 
+   25  history
+   26  vi index.nginx-debian.html 
+   27  systemctl status nginx
+   28  systemctl stop nginx
+   29  systemctl start nginx
+   30  systemctl status nginx
+   31  ls
+   32  cd /tmp/
+   33  ls
+   34  cd day-4/
+   35  ls
+   36  vi ankur.sh
+   37  cat ankur.sh 
+   38  ./ankur.sh
+   39  ls -l
+   40  chmod +x ankur.sh 
+   41  ls
+   42  ls -l
+   43  ./ankur.sh 
+   44  ls
+   45  ls -l
+   46  history
