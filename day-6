@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# =========================================================
+# Linux Server Health Monitoring Script
+# =========================================================
+
+HOSTNAME=$(hostname)
+DATE=$(date '+%Y-%m-%d %H:%M:%S')
+
+echo "=============================================="
+echo " Linux Server Health Check"
+echo "=============================================="
+echo "Hostname : $HOSTNAME"
+echo "Date     : $DATE"
+echo
+
+# ---------------------------------------------------------
+# 1. Memory Usage
+# ---------------------------------------------------------
+echo "----- Memory Usage -----"
+free -h
+echo
+
+# ---------------------------------------------------------
+# 2. Disk Usage
+# ---------------------------------------------------------
+echo "----- Disk Usage -----"
+df -h
+echo
+
+# ---------------------------------------------------------
+# 3. Disk Usage Alert
+# ---------------------------------------------------------
+echo "----- Disk Health -----"
+
+DISK_THRESHOLD=80
+
+df -P -x tmpfs -x devtmpfs | awk 'NR>1 {print $5, $6}' | while read usage mount
+do
+    usage=${usage%\%}
+
+    if [ "$usage" -ge "$DISK_THRESHOLD" ]; then
+        echo "WARNING: $mount disk usage is ${usage}%"
+    fi
+done
+
+echo
+
+# ---------------------------------------------------------
+# 4. System Uptime
+# ---------------------------------------------------------
+echo "----- System Uptime -----"
+uptime
+echo
+
+# ---------------------------------------------------------
+# 5. Load Average
+# ---------------------------------------------------------
+echo "----- Load Average -----"
+uptime | awk -F'load average:' '{print $2}'
+echo
+
+# ---------------------------------------------------------
+# 6. Top CPU Processes
+# ---------------------------------------------------------
+echo "----- Top CPU Processes -----"
+ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -6
+echo
+
+# ---------------------------------------------------------
+# 7. Top Memory Processes
+# ---------------------------------------------------------
+echo "----- Top Memory Processes -----"
+ps -eo pid,comm,%cpu,%mem --sort=-%mem | head -6
+echo
+
+echo "=============================================="
+echo " Health Check Completed"
+echo "=============================================="
