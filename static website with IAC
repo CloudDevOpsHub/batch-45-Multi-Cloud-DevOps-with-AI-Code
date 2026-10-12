@@ -1,0 +1,38 @@
+
+
+
+Part 1 Terraform CLI  / Binary (0.14.9+) 
+
+Part 2 AWS CLI installed.
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+Part 3  AWS account.
+
+Part 4 AWS credentials. You can create a 
+new Access Key and secret  key on this page.
+
+Part 5 Configure the AWS CLI from your terminal. 
+aws configure
+
+
+GIT donwload from https://git-scm.com/install/windows
+
+
+Step 1 :- Take the main.tf file
+          
+git clone https://github.com/CloudDevOpsHub/terraform-aws-s3-cloudfront-static-website-hosting.git
+
+code 
+https://github.com/CloudDevOpsHub/terraform-aws-s3-cloudfront-static-website-hosting
+
+
+Step 2 :- Setup Prerequisites 
+
+
+Step 3 Run commands 
+
+aws sts get-caller-identity
+terraform init                    terraform Plan         terraform Apply 
+
+Step 4 :- Terraform destroy 
+
