@@ -8,3 +8,26 @@ mysql --version
 
 
 mysql -h endpoint -u admin -p
+
+
+
+
+create database firstdb;
+ 
+SHOW DATABASES; -- display databases 
+
+create database rita;
+
+use rita;
+
+create table tutorials_tbl(
+ tutorial_id INT NOT NULL AUTO_INCREMENT,
+ tutorial_title VARCHAR(100) NOT NULL,
+ tutorial_author VARCHAR(40) NOT NULL,
+ submission_date DATE,
+ PRIMARY KEY ( tutorial_id )
+);
+
+SHOW TABLES;
+
+DROP TABLE tutorials_tbl ;
