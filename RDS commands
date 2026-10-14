@@ -1,0 +1,10 @@
+
+
+sudo -i         
+sudo apt update        
+sudo apt upgrade -y    
+sudo apt install mysql-client
+mysql --version
+
+
+mysql -h endpoint -u admin -p
