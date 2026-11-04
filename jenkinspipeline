@@ -1,0 +1,99 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello, Jenkins Pipeline!'
+            }
+        }
+    }
+}
+
+
+------------------------
+
+
+my run on linux  
+
+pipeline {
+agent any
+
+    stages {
+        stage('Git clone') {
+            steps {
+            git branch: 'main', url: 'https://github.com/DevSecOpsG/helloworldsimplejavaprogram'
+            }
+        }
+        stage('Build'){
+            steps{
+            sh 'javac helloworld.java'
+            }
+        }
+        stage('Run'){
+            steps{
+            sh 'java Simple'
+            }
+        }
+    }
+}
+
+
+--------------------- windows pipeline   -------------------
+
+pipeline {
+agent any
+
+    stages {
+        stage('Git clone') {
+            steps {
+            git branch: 'main', url: 'https://github.com/DevSecOpsG/helloworldsimplejavaprogram'
+            }
+        }
+        stage('Build'){
+            steps{
+            bat '''set path=C:\\Program Files\\Java\\jdk1.8.0_311\\bin\\
+            javac helloworld.java'''
+            }
+        }
+		stage('Run'){
+            steps{
+            bat 'java Simple'
+            }
+        }
+   }
+}
+
+
+------------------ dummy pipeline from sytex geenerator 
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+
+                // Run the build on a Unix agent. You must have Maven installed.
+                sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+
+                // To run Maven on a Windows agent, use
+                // bat 'mvn -Dmaven.test.failure.ignore=true clean package'
+            }
+
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+    }
+}
+
+
+
