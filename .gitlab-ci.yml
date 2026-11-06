@@ -1,0 +1,14 @@
+stages:
+  - deploy
+
+deploy-website:
+  stage: deploy
+
+  script:
+    - mkdir -p public
+    - cp index.html public/index.html
+
+  pages: true
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
