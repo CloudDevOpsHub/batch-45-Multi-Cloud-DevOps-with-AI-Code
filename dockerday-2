@@ -33,3 +33,154 @@
    33  docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
    34  docker ps
    35  history
+
+
+
+HW 
+
+How to create VM with oracle Virtual Box tool (hypervisor)
+
+https://www.virtualbox.org/wiki/Downloads 
+
+Download the image of your choice from 
+
+https://www.osboxes.org/virtualbox-images/ 
+
+https://www.osboxes.org/ubuntu/ 
+
+15 min 
+
+proton paymaster 75lpa     
+HR  GCP 
+
+5 OPEN 
+
+
+sudo -i
+apt-get update
+apt install docker.io 
+
+
+docker pull hello-world    -- image will be downloaded 
+
+
+docker run  hello-world         ? PULL + RUN as a container 
+
+ps 
+ps -a  
+
+UBuntu HOST OS HYper   then why we are pulling ubuntu  GETos  Application 
+
+
+docker run ubuntu
+docker run -it ubuntu   163MB               -it  interactive
+
+OS popular + light w          
+
+docker pull  alpine  
+
+OS   ? can i n production ?    NO 
+
+Sandeep Singh 8:32
+we can use but we need many library to support  
+
+install ? 
+
+docker ps -a   
+docker start 4b371f12c9ab
+
+UBuntu   containeeeeeeeeeeee
+
+OS 183 + App Pythn 300mb + GIT    
+
+
+if i strtedddddddddddd   exit    STOP  
+
+
+--rm       prod
+
+docker run ubuntu ls /
+
+
+nginx   web server  ? web run -- HTML 
+
+docker run nginx 
+
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2026/11/12 03:20:19 [notice] 1#1: using the "epoll" event method
+2026/11/12 03:20:19 [notice] 1#1: nginx/1.31.8
+2026/11/12 03:20:19 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2026/11/12 03:20:19 [notice] 1#1: OS: Linux 7.0.0-1017-gcp
+2026/11/12 03:20:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288
+2026/11/12 03:20:19 [notice] 1#1: start worker processes
+2026/11/12 03:20:19 [notice] 1#1: start worker process 28
+2026/11/12 03:20:19 [notice] 1#1: start worker process 29
+
+Running ? but 
+
+http://136.119.34.42:80  Abit 
+
+
+
+docker run nginx 
+docker run -p 80:80 nginx              port mapping    Expose   VM:Container  
+log were visible   ctrl c cancel exited 
+
+-d 
+
+docker run -p 80:80 -d nginx
+
+docker run -d --name himnashu -p 80:80 nginx+os 
+
+docker run --name docker-nginx -p 80:80 nginx
+
+
+
+nginx   html chnage 
+
+DIGITAL marking ageny 
+
+cyber infonic canfonia city     caontainerised app   html page inside the conatiner  
+
+why not ? 
+
+exit 
+
+
+mount ?     -v    volume   dir / folder      
+
+mkdir -p ~/docker-nginx/html
+cd ~/docker-nginx/html
+vi index.html
+
+i 
+
+paste code 
+
+esc : wq 
+
+d
+
+
+docker rm -f               container will be removed 
+
+docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+
+today i created the continaer my 
+
+docker
+ run
+ --name docker-swarnadu               nmae will come 
+ -p 80:80                port mapping 
+ -d                         deattached 
+ -v ~/docker-vmfolder/html:/usr/share/nginx/html
+ volume      mapping            vmdir:containerdir
+
+ nginx    nginx container will be created 
+ 
+ 
+
+docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
