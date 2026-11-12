@@ -1,0 +1,35 @@
+1  docker -v
+    2  docker run  hello-world
+    3  docker ps
+    4  docker ps -a
+    5  docker run -it ubuntu
+    6  docker ps
+    7  docker ps -a
+    8  docker images
+    9  docker pull  alpine
+   10  docker images
+   11  docker ps -a
+   12  docker start 4b371f12c9ab
+   13  docker ps
+   14  docker exec -it 4b371f12c9ab /bin/bash
+   15  docker ps
+   16  docker run --rm ubuntu ls /
+   17  docker ps -a
+   18  docker ps
+   19  docker run nginx
+   20  docker run -p 80:80 nginx
+   21  docker ps
+   22  docker ps -a
+   23  docker run -d --name himnashu -p 80:80 nginx
+   24  docker ps
+   25  docker ps -a
+   26  mkdir -p ~/docker-nginx/html
+   27  cd ~/docker-nginx/html
+   28  vi index.html
+   29  docker ps
+   30  docker rm df990f4d665c
+   31  docker rm -f df990f4d665c
+   32  docker ps
+   33  docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+   34  docker ps
+   35  history
