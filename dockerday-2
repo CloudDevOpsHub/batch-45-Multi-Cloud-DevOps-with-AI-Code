@@ -89,7 +89,7 @@ install ?
 docker ps -a   
 docker start 4b371f12c9ab
 
-UBuntu   containeeeeeeeeeeee
+UBuntu   container
 
 OS 183 + App Pythn 300mb + GIT    
 
