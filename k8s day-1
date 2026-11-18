@@ -1,3 +1,5 @@
+gcloud container clusters get-credentials day1 --region us-east4 --project theta-window-345806
+
 1ˢᵗ      Via Command
 
 kubectl get ns   
