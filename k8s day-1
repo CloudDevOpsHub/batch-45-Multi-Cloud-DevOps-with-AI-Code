@@ -17,3 +17,28 @@ apiVersion: v1
 kind: Namespace
 metadata: 
   name: qa
+
+
+------------------------
+day-2
+
+ gcloud container clusters get-credentials day2 --region us-east4 --project theta-window-345806
+  499  ls
+  500  cd .kube/
+  501  ls
+  502  kubectl get cluster-info
+  503  kubectl cluster-info
+  504  kubectl run nginx  --image=nginx:1.16
+  505  kubectl get pod
+  506  kubectl get svc
+  507  kubectl get svc -w
+  508  kubectl logs nginx
+  509  kubectl get po
+  510  kubectl get svc
+  511  kubectl describe po nginx
+  512  kubectl get svc
+  513  kubectl run nginx  --image=nginx:52.3
+  514  kubectl run nginx11  --image=nginx:52.3
+  515  kubectl get po
+  516  kubectl describe po nginx11
+  517  history
