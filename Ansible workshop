@@ -1,0 +1,61 @@
+Part 1 Create 3 ubuntu VM’s or Docker container 
+step 1 , step 2 and step 3
+
+Part 2 install Ansible and requires tools in ansible_master 
+step 4 ,
+
+Part 3 Setup n number of target machines (2)/ container(2) configure SSH and allow 
+PermitRootLogin and change the root password 
+step 5 , step 6 , step 7, step 8 , step 9
+
+Part 4 Perform the same all steps with target 2 and so on
+step 10
+
+Part 5  Find the IP’s of all targets container  for adding in ansible host file
+step 11 
+
+Part 6 setup ansible_master for ssh connectivity  and adding IP’s in hostfile
+step 12 , step 13 , step 14 
+
+Part 7 copy the generated ssk keys from ansible_master to target machine and 
+check the connectivity
+step 15 , step 16 
+
+Part 8 create a ansible playbook and run 
+step 17 
+
+Part 9 Login to the target machine / Container and verify  is nginx installed or not
+
+
+
+--------------------------
+
+
+  Part 1 Create 3 ubuntu VM’s or Docker container 
+Step 1 Go to docker playground create an  instance / node and create 3 Ubuntu  container 
+
+1ˢᵗ - ansible_master 
+2ⁿᵈ target 1
+3ʳᵈ target 2
+
+Step 2 create containers     apt-get update && apt install docker.io -y
+
+docker run -itd --name ansible_master ubuntu /bin/bash
+docker run -itd --name target1 ubuntu /bin/bash
+docker run -itd --name target2 ubuntu /bin/bash
+
+Step 3 check the process and name for verification 
+docker ps
+
+Part 2 install Ansible and requies tools in ansible_master 
+Step 4 go to ansible_master container  update the ubuntu and install some dependencies and ansible
+
+docker exec -it ansible_master bash
+apt update
+apt install python-is-python3 vim iputils-ping openssh-client -y
+                           Geographical area 6 city 44
+apt install software-properties-common
+add-apt-repository --yes --update ppa:ansible/ansible
+apt install ansible
+
+ansible --version
