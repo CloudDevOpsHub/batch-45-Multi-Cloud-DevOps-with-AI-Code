@@ -1,0 +1,191 @@
+gcloud beta container \
+    --project \
+"theta-window-345806" clusters create "manojday10" \
+    --region \
+"us-east4" \
+    --enable-default-compute-class \
+    --default-compute-class="autopilot" \
+    --autopilot-cluster-policies=no-system-mutation,no-system-impersonation,no-unsafe-webhooks \
+    --no-enable-basic-auth \
+    --cluster-version \
+"1.37.1-gke.1552000" \
+    --release-channel \
+"regular" \
+    --machine-type \
+"e2-medium" \
+    --image-type \
+"COS_CONTAINERD" \
+    --disk-type \
+"pd-standard" \
+    --disk-size \
+"30" \
+    --metadata \
+disable-legacy-endpoints=true \
+    --num-nodes \
+"1" \
+    --logging=SYSTEM,WORKLOAD \
+    --monitoring=SYSTEM,STORAGE,POD,DEPLOYMENT,STATEFULSET,DAEMONSET,HPA,JOBSET,CADVISOR,KUBELET,DCGM \
+    --enable-ip-alias \
+    --network \
+"projects/theta-window-345806/global/networks/default" \
+    --subnetwork \
+"projects/theta-window-345806/regions/us-east4/subnetworks/default" \
+    --cluster-ipv4-cidr \
+"/17" \
+    --no-enable-intra-node-visibility \
+    --default-max-pods-per-node \
+"110" \
+    --enable-ip-access \
+    --security-posture=standard \
+    --workload-vulnerability-scanning=disabled \
+    --no-enable-google-cloud-access \
+    --addons \
+HorizontalPodAutoscaling,HttpLoadBalancing,NodeLocalDNS,GcePersistentDiskCsiDriver,GcpFilestoreCsiDriver \
+    --enable-autoupgrade \
+    --enable-autorepair \
+    --max-surge-upgrade \
+1 \
+    --max-unavailable-upgrade \
+0 \
+    --binauthz-evaluation-mode=DISABLED \
+    --enable-managed-prometheus \
+    --enable-shielded-nodes \
+    --shielded-integrity-monitoring \
+    --no-shielded-secure-boot
+
+
+
+ 418  mkdir batch-45
+  419  cd batch-45
+  420  ls
+  421  vi qans.yaml
+  422  ls
+  423  kubectl apply -f qans.yaml 
+  424  kubectl get ns
+  425  gcloud beta container     --project "theta-window-345806" clusters create "day2"     --region "us-east4"     --no-ena
+ble-basic-auth     --cluster-version "1.36.4-gke.2377000"     --release-channel "regular"     --machine-type "e2-medium"    
+ --image-type "COS_CONTAINERD"     --disk-type "pd-balanced"     --disk-size "30"     --metadata disable-legacy-endpoints=tr
+ue     --num-nodes "1"     --logging=SYSTEM,WORKLOAD     --monitoring=SYSTEM,STORAGE,POD,DEPLOYMENT,STATEFULSET,DAEMONSET,HP
+A,JOBSET,CADVISOR,KUBELET,DCGM     --enable-ip-alias     --network "projects/theta-window-345806/global/networks/default"   
+  --subnetwork "projects/theta-window-345806/regions/us-east4/subnetworks/default"     --cluster-ipv4-cidr "/17"     --no-en
+able-intra-node-visibility     --default-max-pods-per-node "110"     --enable-ip-access     --security-posture=standard     
+--workload-vulnerability-scanning=disabled     --no-enable-google-cloud-access     --addons HorizontalPodAutoscaling,HttpLoa
+dBalancing,NodeLocalDNS,GcePersistentDiskCsiDriver     --enable-autoupgrade     --enable-autorepair     --max-surge-upgrade 
+1     --max-unavailable-upgrade 0     --binauthz-evaluation-mode=DISABLED     --enable-managed-prometheus     --shielded-int
+egrity-monitoring     --no-shielded-secure-boot
+  426  gcloud container clusters get-credentials day2 --region us-east4 --project theta-window-345806
+  427  ls
+  428  cd .kube/
+  429  ls
+  430  kubectl get cluster-info
+  431  kubectl cluster-info
+  432  kubectl run nginx  --image=nginx:1.16
+  433  kubectl get pod
+  434  kubectl get svc
+  435  kubectl get svc -w
+  436  kubectl logs nginx
+  437  kubectl get po
+  438  kubectl get svc
+  439  kubectl describe po nginx
+  440  kubectl get svc
+  441  kubectl run nginx  --image=nginx:52.3
+  442  kubectl run nginx11  --image=nginx:52.3
+  443  kubectl get po
+  444  kubectl describe po nginx11
+  445  history
+  446  gcloud compute instances create deppaksoni     --project=theta-window-345806     --zone=us-central1-f     --machine-t
+ype=e2-standard-2     --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default     --metadata=enable-osc
+onfig=TRUE     --maintenance-policy=MIGRATE     --provisioning-model=STANDARD     --service-account=751335473450-compute@dev
+eloper.gserviceaccount.com     --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth
+/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/service.management.readonly,
+https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/trace.append     --tags=http-server,https-ser
+ver     --create-disk=auto-delete=yes,boot=yes,device-name=deppaksoni,disk-resource-policy=projects/theta-window-345806/regi
+ons/us-central1/resourcePolicies/default-schedule-1,image=projects/ubuntu-os-cloud/global/images/ubuntu-2404-noble-amd64-v20
+261105,mode=rw,size=30,type=pd-balanced     --no-shielded-secure-boot     --shielded-vtpm     --shielded-integrity-monitorin
+g     --labels=goog-ops-agent-policy=v2-template-1-7-0,goog-ec-src=vm_add-gcloud     --reservation-affinity=any && printf 'a
+gentsRule:\n  packageState: installed\n  version: latest\ninstanceFilter:\n  inclusionLabels:\n  - labels:\n      goog-ops-a
+gent-policy: v2-template-1-7-0\n' > config.yaml && gcloud compute instances ops-agents policies create goog-ops-agent-v2-tem
+plate-1-7-0-us-central1-f     --project=theta-window-345806     --zone=us-central1-f     --file=config.yaml
+  447  gcloud container clusters get-credentials vivekcluster --region us-east4 --project theta-window-345806
+  448  kubectl create deployment nginxdeploy --image=nginx
+  449  kubectl get eploy
+  450  kubectl get deploy
+  451  kubectl get po
+  452  kubectl delete po nginxdeploy-768c7b8b4c-ckwnk
+  453  kubectl get po
+  454  kubectl get deploy
+  455  claer
+  456  clear
+  457  kubectl get po
+  458  kubectl edit po nginxdeploy-768c7b8b4c-dhdwm
+  459  kubectl get deploy
+  460  kubectl edit deploy nginxdeploy
+  461  kubectl get po
+  462  kubectl run jenkins  --image=jenkins/jenkins:lts
+  463  kubectl get po
+  464  kubectl get svc
+  465  kubectl exec jenkins -- cat /var/jenkins_home/secrets/initialAdminPassword
+  466  history
+  467  gcloud container clusters get-credentials project-2 --region us-east4 --project theta-window-345806
+  468  mkdir batch-45
+  469  cd batch-45
+  470  ls
+  471  git clone https://github.com/GoogleCloudPlatform/microservices-demo.git
+  472  cd microservices-demo/
+  473  ls
+  474  cd release/
+  475  ls
+  476  kubectl get po
+  477  kubectl get  deploy
+  478  kubectl get  svc
+  479  kubectl create -f kubernetes-manifests.yaml
+  480  kubectl get po
+  481  kubectl get  deploy
+  482  kubectl get  svc
+  483  gcloud container clusters get-credentials project-2 --region us-east4 --project theta-window-345806
+  484  kubectl get po
+  485  kubectl delete po paymentservice-68779f877d-kv7g8
+  486  kubectl get po
+  487  kubectl get  deploy
+  488  kubectl delete deploy paymentservice
+  489  kubectl get po
+  490  kubectl get  svc
+  491  kubectl apply  -f kubernetes-manifests.yaml
+  492  cd batch-45/
+  493  ls
+  494  cd microservices-demo/release/
+  495  ls
+  496  kubectl apply  -f kubernetes-manifests.yaml
+  497  gcloud container clusters get-credentials manojday10 --region us-east4 --project theta-window-345806
+  498  cd batch-45/
+  499  ls
+  500  vi nginx-deployment.yaml
+  501  kubectl apply -f nginx-deployment.yaml
+  502  kubectl get po
+  503  kubectl describe deployment nginx-deployment
+  504  kubectl expose deployment nginx-deployment --type=LoadBalancer --port=80 --name=nginx-service
+  505  kubectl get svc 
+  506  kubectl get svc  -w 
+  507  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+  508  kubectl get no
+  509  kubectl describe no gke-manojday10-default-pool-9a2a7903-wt01
+  510  alias k="kubectl"
+  511  k get nodes
+  512* vi job.yam
+  513  kubectl apply -f job.yaml
+  514  k get jobs
+  515  kubectl get pods
+  516  kubectl logs job/my-first-job
+  517  kubectl get pods
+  518  kubectl logs job/my-first-job
+  519  kubectl create secret generic db-secret
+  520  --from-literal=username=admin
+  521  --from-literal=password=MyDB@123
+  522  kubectl create secret generic db-secret --from-literal=username=admin --from-literal=password=MyDB@123
+  523  kubectl get secrets
+  524  kubectl create secret generic db-secret1 --from-literal=username=admin --from-literal=password=MyDB@123
+  525  kubectl get secrets
+  526  kubectl describe secret db-secret
+  527  kubectl describe secret db-secret1
+  528  histroy
+  529  history
