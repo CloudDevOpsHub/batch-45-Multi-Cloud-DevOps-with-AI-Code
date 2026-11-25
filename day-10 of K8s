@@ -1,0 +1,54 @@
+gcloud beta container \
+    --project \
+"theta-window-345806" clusters create "manojday10" \
+    --region \
+"us-east4" \
+    --enable-default-compute-class \
+    --default-compute-class="autopilot" \
+    --autopilot-cluster-policies=no-system-mutation,no-system-impersonation,no-unsafe-webhooks \
+    --no-enable-basic-auth \
+    --cluster-version \
+"1.37.1-gke.1552000" \
+    --release-channel \
+"regular" \
+    --machine-type \
+"e2-medium" \
+    --image-type \
+"COS_CONTAINERD" \
+    --disk-type \
+"pd-standard" \
+    --disk-size \
+"30" \
+    --metadata \
+disable-legacy-endpoints=true \
+    --num-nodes \
+"1" \
+    --logging=SYSTEM,WORKLOAD \
+    --monitoring=SYSTEM,STORAGE,POD,DEPLOYMENT,STATEFULSET,DAEMONSET,HPA,JOBSET,CADVISOR,KUBELET,DCGM \
+    --enable-ip-alias \
+    --network \
+"projects/theta-window-345806/global/networks/default" \
+    --subnetwork \
+"projects/theta-window-345806/regions/us-east4/subnetworks/default" \
+    --cluster-ipv4-cidr \
+"/17" \
+    --no-enable-intra-node-visibility \
+    --default-max-pods-per-node \
+"110" \
+    --enable-ip-access \
+    --security-posture=standard \
+    --workload-vulnerability-scanning=disabled \
+    --no-enable-google-cloud-access \
+    --addons \
+HorizontalPodAutoscaling,HttpLoadBalancing,NodeLocalDNS,GcePersistentDiskCsiDriver,GcpFilestoreCsiDriver \
+    --enable-autoupgrade \
+    --enable-autorepair \
+    --max-surge-upgrade \
+1 \
+    --max-unavailable-upgrade \
+0 \
+    --binauthz-evaluation-mode=DISABLED \
+    --enable-managed-prometheus \
+    --enable-shielded-nodes \
+    --shielded-integrity-monitoring \
+    --no-shielded-secure-boot
