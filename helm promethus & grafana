@@ -19,3 +19,32 @@ helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack --
 “kube-prometheus-stack” is the name of the release. You can change this if you want.
 “prometheus-community/kube-prometheus-stack” is the name of the chart.
 “monitor” is the name of the namespace where we are going to deploy the operator.
+
+
+-----------------
+
+
+Step 6 You can verify your installation using:
+ kubectl get pods -n monitor
+
+Step 7 create a service of grafana 
+
+Grafana Service:- create a service of on 3000 port as a loadbalancer
+
+or 
+
+kubectl expose deployment kube-prometheus-stack-grafana --port=3000 --target-port=3000 --name=grafana --type=LoadBalancer -n monitor
+
+Step 8 verify service and unlock Grafana 
+kubectl get svc -n monitor   admin/prom-operator
+
+Step 9 Explore Autoconfigured grafana dashboards 
+
+Some Dashboards 
+General / Kubernetes / Compute Resources / Cluster
+General / Kubernetes / Compute Resources / Namespace (Pods)
+
+Step 10 Delete the Helm chart
+
+  helm uninstall [RELEASE_NAME]
+
